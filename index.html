@@ -8,7 +8,30 @@
 </head>
 <body>
     <script>
-        
+       const loc = prompt("Alisher yo'l bolsin,qayerga ketayapsan?");
+        const money = + prompt("Yaxshi,Qancha puling bor? (so`m)");
+        const cost = 500*9433.34 + 250*9433.34 + 120*10354.03;
+        if(!money){
+         alert("Sendan qanchligini soradim :(");
+        }
+        else{
+         if(money>=cost){
+             alert(`
+             Oq yo'l Alisher!
+             Puling yetarli:)
+             `);
+         }
+         else{
+             const dist = cost - money;
+             alert(` 
+             Alisher puling ${dist} so'm yetmaydi,biroz sabr qil,
+             Borib kelishing uchun jami ${cost} so'm ketadi! 
+             `);
+         }
+        }
+
+        //alert(cost)
+
     </script>
 </body>
 </html>
