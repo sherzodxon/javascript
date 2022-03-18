@@ -18,9 +18,10 @@
         <button>Bosing</button>
     </form>
 
-    <p id="result" class="text-result-SUM"></p>
-    <p id="usd" class="text-result-USD"></p>
-    <p id="euro" class="text-result-EUR"></p>
+    <p  class="text-result-SUM"></p>
+    <p  class="text-result-USD"></p>
+    <p  class="text-result-EUR"></p>
+    <a href="/" style="text-decoration: none; background-color:aqua; " class="finish-link"></a>
 
     <script>
         const USD = 9433;
@@ -36,6 +37,7 @@
         const usd = document.querySelector(".text-result-USD");
         const euro = document.querySelector(".text-result-EUR");
         const input = document.querySelector(".text-input");
+        const link = document.querySelector(".finish-link");
 
         form.addEventListener("submit", function (evt) {
             evt.preventDefault();
@@ -43,9 +45,11 @@
             let text = input.value;
             let usdID = `${text / USD}$`;
             let euroID = `${text / EUR}€`;
+
             result.textContent = `${text}sum`;
             usd.textContent = usdID;
             euro.textContent = euroID;
+            link.textContent = `Ok`;
 
         });
     </script>
