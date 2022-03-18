@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <h1 style="color: aqua;" id="title">3-JavaScript vazifasi</h1>
+
+    <form class="name-form" method="get" action="#">
+        <label>Pullarni so'mda kiriting
+            <input class="text-input" required type="number">
+        </label>
+        <button>Bosing</button>
+    </form>
+
+    <p id="result" class="text-result-SUM"></p>
+    <p id="usd" class="text-result-USD"></p>
+    <p id="euro" class="text-result-EUR"></p>
+
     <script>
-       const loc = prompt("Alisher yo'l bolsin,qayerga ketayapsan?");
-        const money = + prompt("Yaxshi,Qancha puling bor? (so`m)");
-        const cost = 500*9433.34 + 250*9433.34 + 120*10354.03;
-        if(!money){
-         alert("Sendan qanchligini soradim :(");
-        }
-        else{
-         if(money>=cost){
-             alert(`
-             Oq yo'l Alisher!
-             Puling yetarli:)
-             `);
-         }
-         else{
-             const dist = cost - money;
-             alert(` 
-             Alisher puling ${dist} so'm yetmaydi,biroz sabr qil,
-             Borib kelishing uchun jami ${cost} so'm ketadi! 
-             `);
-         }
-        }
+        const USD = 9433;
+        const EUR = 10354;
 
-        //alert(cost)
+        const HOTEL_EXPENSES = 250;
+        const TICKET = 500;
+        const ENTERTAINMENT = 120;
+        const expensesUzs = (HOTEL_EXPENSES + TICKET) * USD + ENTERTAINMENT * EUR;
 
+        const form = document.querySelector(".name-form");
+        const result = document.querySelector(".text-result-SUM");
+        const usd = document.querySelector(".text-result-USD");
+        const euro = document.querySelector(".text-result-EUR");
+        const input = document.querySelector(".text-input");
+
+        form.addEventListener("submit", function (evt) {
+            evt.preventDefault();
+
+            let text = input.value;
+            let usdID = `${text / USD}$`;
+            let euroID = `${text / EUR}€`;
+            result.textContent = `${text}sum`;
+            usd.textContent = usdID;
+            euro.textContent = euroID;
+
+        });
     </script>
 </body>
+
 </html>
